@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ad{
+            width: 80%;
+            height: 300px;
+            border:0px solid blue;
+            margin: auto;
+        }
+        #page{
+            height:1550px;
+            margin: auto;
+            width:95%;
+            border:1px solid grey;
+            display:flex;
+            justify-content: space-between;
+        }
+
+        #left{
+            width:22%;
+            height:1550px;
+            border: 1px solid red;
+        }
+        .adimage{
+        
+            width:100%;
+        }
+        #right{
+            width:24%;
+            height:1550px;
+            border:1px solid blue;
+        }
+
+        #centre{
+            border:0px solid black;
+            width:50%;
+        }
+
+        #big{
+            height:auto;
+            border:0px solid blue;
+
+
+        }
+        #big img{
+            height:70%;
+            width:100%;
+            border-radius: 10%;
+        }
+
+        .small{
+            height:auto;
+            border:0px solid blue;
+           
+        }
+
+        .small img{
+            height: 60%;
+            width:30%;
+            border-radius: 10%;
+
+
+        }
+
+
+        
+
+    </style>
+
+</head>
+<body>
+    <div id="ad">
+
+
+    </div>
+    <div id="page">
+
+        <div id="left">
+
+        </div>
+        <div id="centre">
+            <div id="big">
+
+            </div>
+
+            
+
+        </div>
+        <div id="right">
+
+        </div>
+
+
+    </div>
+</body>
+</html>
+<script>
+    let adData=[
+        {
+          url:"https://i.ibb.co/WWgykhb/ad1.jpg",
+        },
+        {
+            url:"https://i.ibb.co/qBQMrWh/ad2.jpg",
+        },
+        {
+           url:"https://i.ibb.co/f99983L/ad3.jpg",
+        },
+        {
+          url:"https://i.ibb.co/BVNwr2B/ad4.jpg",
+        }
+    ]
+
+    let id;
+    let i=0;
+    let adContainer=document.getElementById("ad");
+    id=setInterval(() => {
+
+        if(i==3){
+            i=0;
+        }
+      
+        appendAd(i);
+
+        i++;
+        
+    }, 5000);
+
+    let appendAd=(i)=>{
+
+        adContainer.innerHTML=null;
+
+        let img=document.createElement("img");
+        img.className="adimage";
+            img.src=adData[i].url;
+
+        adContainer.append(img);
+
+      
+    }
+
+    let url="https://newsapi.org/v2/top-headlines/sources?category=sports&apiKey=abffd40055ea43ec8374895bd5001fec";
+    let url2="https://newsapi.org/v2/everything?q=cricket&apiKey=abffd40055ea43ec8374895bd5001fec";
+
+    let url3="http://localhost:6001/cri.php?url=https://www.cricbuzz.com/live-cricket-scores/30524/53rd-match-indian-premier-league-2020";
+
+    let getData=async()=>{
+
+        let res=await fetch(url2);
+
+        res=await res.json();
+
+        console.log(res);
+
+        Append(res.articles);
+    }
+
+
+
+    getData();
+
+
+    let big= document.getElementById("big");
+
+    let container=document.getElementById("centre");
+
+    let Append=(data)=>{
+
+        container.innerHTML=null;
+       
+        let bImg=document.createElement("img");
+        bImg.src=data[0].urlToImage;
+        let bName=document.createElement("h1");
+        bName.innerText=data[0].title;
+        let bDes=document.createElement("p");
+        bDes.innerText=data[0].description;
+        big.append(bImg,bName,bDes);
+        container.append(big);
+
+        data=data.slice(1,11);
+
+
+        
+        data.forEach((el)=>{
+
+            let div=document.createElement("div");
+            div.className="small";
+
+            let sImg=document.createElement("img");
+            sImg.src=el.urlToImage
+
+            let sName=document.createElement("h1");
+            sName.innerText=el.title;
+
+            let sDes=document.createElement("p");
+            sDes.innerText=el.description;
+
+            div.append(sImg,sName,sDes);
+            container.append(div);
+           
+        });
+
+    }
+
+
+
+// <a href="https://ibb.co/PZwhcL7"><img src="https://i.ibb.co/WWgykhb/ad1.jpg" alt="ad1" border="0"></a>
+// <a href="https://ibb.co/wymNzw8"><img src="https://i.ibb.co/qBQMrWh/ad2.jpg" alt="ad2" border="0"></a>
+// <a href="https://ibb.co/1MMMsCj"><img src="https://i.ibb.co/f99983L/ad3.jpg" alt="ad3" border="0"></a>
+// <a href="https://ibb.co/jvRHWkD"><img src="https://i.ibb.co/BVNwr2B/ad4.jpg" alt="ad4" border="0"></a>
+
+
+//Player info url="https://cricketerinfo.netlify.app/home.html"
+
+
+
+// let urlIPL="https://api.cricapi.com/v1/series_info?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0&id=47b54677-34de-4378-9019-154e82b9cc1a"
+// //API Key = 883128b6-33a4-46dc-96ae-f713d0af5c09
+// let urlFlags="https://api.cricapi.com/v1/countries?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
+
+// let urlSeries="https://api.cricapi.com/v1/series?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
+
+// //let url="https://api.cricapi.com/v1/series?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0&search=IPL";
+
+// let urlSeries2="https://api.cricapi.com/v1/matches?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
+
+// let urlcurrentMatches="https://api.cricapi.com/v1/currentMatches?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
+
+// let urlSquad="https://api.cricapi.com/v1/players?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
+
+// let urlAllPlayer="https://api.cricapi.com/v1/players?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
+
+// let urlBbyB="https://api.cricapi.com/v1/match_info?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0&id=820cfd88-3b56-4a6e-9dd8-1203051140da"
+   
+// let urlPlayerInfo="https://api.cricapi.com/v1/players_info?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0&id=16592242-ef26-45d9-bf23-fc090e90fbbe";
+</script>
