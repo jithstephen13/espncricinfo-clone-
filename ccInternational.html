@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: azure;
+        }
+        #up{
+            display:flex;
+            justify-content: space-around;
+        }
+
+        .upsub{
+            cursor: pointer;
+
+        }
+        #box{
+            border:0px solid grey;
+            margin: auto;
+            width:95%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap:1px;
+        }
+        .sub{
+            margin:auto;
+            border:0px solid grey;
+            height:3500px;
+            width:100%;
+            text-align: center;
+            
+            
+        }
+
+        .sub1{
+            border:0px solid red;
+            width:100%;
+            height: auto;
+            display:flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-around;
+            color:rgb(66, 180, 224);
+        }
+        .sub1 h3{
+            cursor:pointer;
+        }
+        .sub2 h3:hover{
+            color:rgb(2, 126, 175);
+        }
+        .sub2{
+            border:0px solid red;
+            width:100%;
+            height: auto;
+            display:flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-around;
+            color:rgb(61, 171, 214);
+        }
+        .sub2{
+            cursor:pointer;
+            
+        }
+        .sub2 h3:hover{
+            color:rgb(4, 142, 197);
+
+        }
+        #download{
+            
+            display: flex;
+            flex-direction:column;
+            justify-content:flex-end;
+            
+        }
+
+       #foot div{
+        margin:auto;
+        display:flex;
+       
+        justify-content: space-around;
+
+       }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="up">
+        <div class="upsub"><h1>Current Cricket</h1></div>
+        <div class="upsub"><h1>Future Series/Tournaments</h1></div>
+       <div class="upsub"><h1>Recently Concluded</h1></div>
+
+    </div>
+    <div id="box">
+
+        <div class="sub">
+            <h2>INTERNATIONAL TOURS</h2>
+
+            <div class="sub1" id="tour">
+
+                <h3>Pakistan v England</h3> 
+                <h3>UAE v Bangladesh</h3>
+                <h3>India v South Africa</h3>
+                <h3>WI-W v NZ-W</h3>
+                <h3>NZ-A in India</h3>
+                <h3>T20 Tri Series(BAN,PAK,NZ)</h3>
+                <h3>Australia v West Indies</h3>
+                <h3>Australia v England</h3> 
+
+            </div>
+            <h2>INTERNATIONAL TOURNAMENTS</h2>
+
+            <div class="sub1" id="tornam">
+
+                <h3>T20 WC Qualifier(W)</h3>
+                <h3>Women's Asia Cup</h3>
+                <h3>T20 World Cup Warm-up</h3>
+                <h3>ICC Men's T20 World Cup</h3>
+            
+
+            </div>
+
+           
+
+        </div>
+
+        <div class="sub">
+
+            <h2>ICC TOURNAMENTS</h2>
+
+            <div class="sub2">
+
+                <h3>ICC Women's Championship</h3>
+                <h3>Men's Cricket World Cup League 2</h3>
+                <h3>CWC Challenge Group A</h3>
+                <h3>CWC Challenge Group B</h3>
+                <h3>ICC CWC Super League</h3>
+                <h3>ICC World Test Championship</h3>
+                
+            </div>
+
+            <h2>T20/T10 TOURNAMENTS</h2>
+
+            <div class="sub2">
+
+                <h3>Road Safety Series</h3>
+                <h3>Legends League</h3>
+                <h3>WPL (Hong Kong)</h3>
+                <h3>Premier Legaue (Hong Kong)</h3>
+                
+                
+            </div>
+        
+
+            <h2>ASSOCIATE CRICKET</h2>
+
+            <div class="sub2">
+
+                <h3>Japan v Indonesia</h3>
+                <h3>Pacific Cup</h3>
+                <h3>EAP Qualifier B</h3>
+                <h3>East Asia Cup (W)</h3>
+                
+            </div>
+
+          
+
+
+
+
+
+            <h2>AUSTRALIA DOMESTIC</h2>
+            <div class="sub2">
+
+                <h3>Sheffield Shield</h3>
+                <h3>The Marsh Cup</h3>
+                <h3>BBL 2022</h3>
+                <h3>WBBL 2022</h3>
+                <h3>WNC League</h3>
+            
+                
+            </div>
+           
+
+
+            <h2>ENGLAND DOMESTIC</h2>
+            <div class="sub2">
+
+                <h3>County Div1</h3>
+                <h3>County Div2</h3>
+                <h3>100 (Men's)</h3>
+                <h3>100 (Women's)</h3>
+                <h3>RL Cup</h3>
+                <h3>Vitality Blast</h3>
+                <h3>RHF Cup</h3>
+                
+            
+            </div>
+
+
+            <h2>INDIA DOMESTIC</h2>
+
+            <div class="sub2">
+
+                <h3>Duleep Trophy</h3>
+                <h3>Irani Trophy</h3>
+                <h3>Ranji Trophy</h3>
+                <h3>SMA Trophy</h3>
+                <h3>SMA Trophy</h3>
+                <h3>Hazare Trophy</h3>
+              
+                
+            </div>
+
+        
+
+            <h2>NEW ZEALAND DOMESTIC</h2>
+
+            <div class="sub2">
+                <h3>Plunket Shield</h3>
+                <h3>Ford Trophy</h3>
+                <h3>Women's 1-Day</h3>
+               
+                
+            </div>
+
+
+
+
+            <h2>PAKISTAN DOMESTIC</h2>
+
+            <div class="sub2">
+                <h3>QEA Trophy</h3>
+                <h3>PCB 4-Day</h3>
+                <h3>PCB T20</h3>
+                <h3>PCB 4-Day</h3>
+                
+            </div>
+
+
+            <h2>WEST INDIES DOMESTIC</h2>
+
+            <div class="sub2">
+
+                <h3>CPL 2022</h3>
+                <h3>6IXTY (W)</h3>
+                <h3>6IXTY (M)</h3>
+                <h3>WCPL 2022</h3>
+
+                
+            </div>
+
+
+            <h2>ZIMBABWE DOMESTIC</h2>
+
+            <div class="sub2">
+                <h3>Logan Cup</h3>
+                <h3>Regional Games</h3>
+                <h3>Pro50 Championship</h3>
+                <h3>Regionals Pro50</h3>
+               
+                
+            </div>
+
+        </div>
+
+        <div id="download">
+
+            <h3>Download ICC's Future tours programme (Men)</h3>
+            <h3>Download ICC's Future tours programme (Women)</h3>
+          
+        </div>
+    </div>
+
+
+    <div id="foot">
+        <div class="subfoot">
+           <h2>SITEMAP  |</h2>
+           <h2>FEEDBACK  |</h2>
+           <h2>RSS  |</h2>
+           <h2>ABOUT US  |</h2>
+           <h2>CAREERS  |</h2>
+           <h2>PRIVACY POLICY  |</h2>
+           <h2>TERMS OF USE</h2>
+        </div>
+
+        <div class="subfoot">
+            <h2>INTEREST BASED ADS</h2>
+            <h2>YOUR CALIFORNIA PRIVACY RIGHTS</h2>
+            <h2>CHILDREN'S ONLINE PRIVACY POLICY</h2>
+           
+        </div>
+
+        <div class="subfoot">
+            <h2>ABOUT NIELSEN MEASUREMENT</h2>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+
+//  22PN6bFkNY0UJfz8Q0uNvp0W6WO6u3sIBtnRaGVcBVw56zPkhTU4UNRASdq5
+
+let url="https://api.cricapi.com/v1/series?apikey=88bf4801-ded4-4d71-ba59-b21643217189&offset=0";
+let uuu="https://newsapi.org/v2/top-headlines/sources?category=sports&apiKey=abffd40055ea43ec8374895bd5001fec";
+
+let getData=async()=>{
+     
+        let res=await fetch(uuu);
+
+        res=await res.json();
+
+       //let data=res.data.matchList;
+
+       // console.log(data);
+
+        console.log(res);
+    }
+
+    getData();
+
+
+
+
+
+//     bbbEnabled
+// : 
+// false
+// date
+// : 
+// "2022-03-26"
+// dateTimeGMT
+// : 
+// "2022-03-26T14:00:00"
+// fantasyEnabled
+// : 
+// true
+// hasSquad
+// : 
+// true
+// id
+// : 
+// "341e6690-ece0-4dce-83fc-91effbb28eb3"
+// matchType
+// : 
+// "t20"
+// name
+// : 
+// "Chennai vs Kolkata, 1st Match"
+// status
+// : 
+// "Kolkata Knight Riders won by 6 wkts"
+// teamInfo
+// : 
+// (2) [{…}, {…}]
+// teams
+// : 
+// (2) ['Chennai Super Kings', 'Kolkata Knight Riders']
+// venue
+// : 
+// "Wankhede Stadium, Mumbai"
+
+
+</script>
