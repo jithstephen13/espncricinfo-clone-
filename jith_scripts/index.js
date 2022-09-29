@@ -233,13 +233,13 @@ let res= await fetch(`https://www.googleapis.com/youtube/v3/search?q=icc cricket
 	// .then(response => console.log(response))
 	// .catch(err => console.error(err));
 
-    const url1="https://api.api-cricket.com/cricket/?method=get_leagues&APIkey="
+    const url1="https://apii.ap-cricket.com/cricket/?method=get_leagues&APIkey="
     const url2="https://apiv2.api-cricket.com/?method=get_livescore&APIkey="
 
 let getlivsr=async()=>{
  let res=await fetch(`${url2}af640d3ab47e3bbdad6344e4f9e2fd540d68e1756dbeb949638546065d37733e`)
  res=await res.json()
- console.log(res.result)
+ console.log(res)
  appendlivescoer(res.result)
 
 }
