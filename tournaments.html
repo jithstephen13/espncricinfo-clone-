@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+        background-color: azure;
+      }
+      #up2{
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #godcontainer {
+        display: flex;
+        justify-content: space-around;
+      }
+      #box2 {
+        text-align: center;
+      }
+      #box2sub {
+        text-align: center;
+        color: rgb(66, 180, 224);
+      }
+      #box2sub :hover {
+        color: rgb(2, 126, 175);
+        cursor: pointer;
+      }
+
+      #download {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      #recommend{
+        overflow:scroll;
+        border:1px solid black;
+        height:700px;
+        width:300px;
+       }
+
+       #recommend img{
+        width:100%;
+       }
+
+       .disp{
+        color:rgb(61, 171, 214);
+        text-decoration:none;
+
+       }
+
+       .upclass{
+        color: black;
+        text-decoration: none;
+
+       }
+    </style>
+  </head>
+  <body>
+    <div id="godcontainer">
+      <div>
+        <div id="up2">
+          <div class="upsub"><a class="upclass" href="ccInternational.html"><h2>Current Cricket</h2></a></div>
+          <div class="upsub"><a class="upclass" href="tournaments.html"><h2>Future Series/Tournaments</h2></a></div>
+          <div class="upsub"><a class="upclass" href="recentConclude.html"><h2>Recently Concluded</h2></a></div>
+        </div>
+
+        <div id="box2">
+          <h2>INTERNATIONAL TOURS</h2>
+
+          <div id="box2sub">
+            <a class="disp" href="display.html"><h3>India tour of New Zealand, Nov 2022</h3></a>
+            <a class="disp" href="display.html"><h3>England tour of Pakistan, Dec 2022</h3></a>
+            <a class="disp" href="display.html"><h3>South Africa tour of Australia, Dec 2022</h3></a>
+            <a class="disp" href="display.html"><h3>Bangladesh Women tour of New Zealand, Dec 2022</h3></a>
+            <a class="disp" href="display.html"><h3>England tour of New Zealand, Feb 2023</h3></a>
+            <a class="disp" href="display.html"><h3>Sri Lanka tour of New Zealand, Mar 2023</h3></a>
+            <a class="disp" href="display.html"><h3>The Ashes, Jun 2023</h3></a>
+            <a class="disp" href="display.html"><h3>Women's Ashes, Jun 2023</h3></a>
+            <a class="disp" href="display.html"><h3>New Zealand tour of England, Aug 2023</h3></a>
+            <a class="disp" href="display.html"><h3>Sri Lanka Women tour England, Sep 2023</h3></a>
+            
+           
+          </div>
+
+          <h2>INTERNATIONAL TOURNAMENTS</h2>
+
+          <div id="box2sub">
+            <a class="disp" href="display.html"><h3>Women's U19 World Cup</h3></a>
+            
+          </div>
+
+          <div id="download">
+            <h3>Download ICC's Future tours programme (Men)</h3>
+            <h3>Download ICC's Future tours programme (Women)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div id="recommend">
+        <h2>Readers Recommend</h2>
+        <p>Curated Tweets by @ESPNcricinfo</p>
+        <div id="recContainer"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+    let url2="https://newsapi.org/v2/everything?q=cricket&apiKey=abffd40055ea43ec8374895bd5001fec";
+  
+  let getTweets=async()=>{
+
+    let res= await fetch(`${url2}`);
+
+    res=await res.json();
+
+    console.log(res);
+    AppendTweets(res.articles);
+
+  }
+
+  getTweets();
+
+  let recContainer=document.getElementById("recContainer");
+
+  let AppendTweets=(data)=>{
+ recContainer.innerHTML=null;
+
+data=data.slice(11,22);
+
+data.forEach((el)=>{
+let div=document.createElement("div");
+
+let t=document.createElement("h4");
+t.innerText=el.title;
+
+let im=document.createElement("img");
+im.src=el.urlToImage;
+
+let des=document.createElement("p");
+des.innerText=el.description;
+
+let tim=document.createElement("h5");
+tim.innerText=el.publishedAt;
+
+div.append(t,im,des,tim);
+recContainer.append(div);
+
+});
+
+  }
+</script>
