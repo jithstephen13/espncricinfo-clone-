@@ -40,3 +40,14 @@
    background-color: rgba(189, 255, 255, 0.385);
    border: 0px;
 }
+h4,p{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h4{
+  font-size: 22px;
+  color: #2B2c2D;
+}
+p{
+  font-size: 21px;
+  color: #48494A;
+}
