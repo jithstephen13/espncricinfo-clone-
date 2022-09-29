@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            background-color: azure;
+        }
         #ad{
             width: 80%;
             height: 300px;
@@ -16,7 +19,7 @@
             height:1550px;
             margin: auto;
             width:95%;
-            border:1px solid grey;
+            border:0px solid grey;
             display:flex;
             justify-content: space-between;
         }
@@ -24,7 +27,7 @@
         #left{
             width:22%;
             height:1550px;
-            border: 1px solid red;
+            border: 0px solid red;
         }
         .adimage{
         
@@ -33,7 +36,7 @@
         #right{
             width:24%;
             height:1550px;
-            border:1px solid blue;
+            border:0px solid blue;
         }
 
         #centre{
@@ -67,6 +70,34 @@
 
         }
 
+        .scorecard{
+            border:1px solid black;
+            display:grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        .scorecard img{
+           width:40%;
+        }
+        .rightimg{
+            border-radius: 100%;
+            width:60%;
+        }
+        .rightDiv{
+            border:0px solid grey;
+            display:grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        .view{
+            color:blue;
+
+        }
+        .view :hover{
+            cursor: pointer;
+            color:purple;
+        }
+
+
 
         
 
@@ -92,6 +123,13 @@
 
         </div>
         <div id="right">
+
+            <h2>Top Wicket Takers</h2>
+
+            <div id="rightUp"></div>
+
+            <h2>Top Run Scorers</h2>
+            <div id="rightDown"></div>
 
         </div>
 
@@ -207,34 +245,189 @@
     }
 
 
+    let liveUrl="https://api.api-cricket.com/cricket/?method=get_events&APIkey=!_your_account_APIkey_!&date_start=2019-07-24&date_stop=2019-07-24";
+    // ab40974e87c42646c59d6201c67eecea3c2781f20061050aa84677a4f5ab1068
+    let getLive=async()=>{
+        let res= await fetch(`https://api.api-cricket.com/cricket/?method=get_events&APIkey=ab40974e87c42646c59d6201c67eecea3c2781f20061050aa84677a4f5ab1068&date_start=2019-07-24&date_stop=2019-07-24`);
 
-// <a href="https://ibb.co/PZwhcL7"><img src="https://i.ibb.co/WWgykhb/ad1.jpg" alt="ad1" border="0"></a>
-// <a href="https://ibb.co/wymNzw8"><img src="https://i.ibb.co/qBQMrWh/ad2.jpg" alt="ad2" border="0"></a>
-// <a href="https://ibb.co/1MMMsCj"><img src="https://i.ibb.co/f99983L/ad3.jpg" alt="ad3" border="0"></a>
-// <a href="https://ibb.co/jvRHWkD"><img src="https://i.ibb.co/BVNwr2B/ad4.jpg" alt="ad4" border="0"></a>
-
-
-//Player info url="https://cricketerinfo.netlify.app/home.html"
+        res=await res.json();
 
 
+        console.log(res.result);
 
-// let urlIPL="https://api.cricapi.com/v1/series_info?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0&id=47b54677-34de-4378-9019-154e82b9cc1a"
-// //API Key = 883128b6-33a4-46dc-96ae-f713d0af5c09
-// let urlFlags="https://api.cricapi.com/v1/countries?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
+        AppendLive(res.result);
 
-// let urlSeries="https://api.cricapi.com/v1/series?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
 
-// //let url="https://api.cricapi.com/v1/series?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0&search=IPL";
+    }
 
-// let urlSeries2="https://api.cricapi.com/v1/matches?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
+    getLive();
 
-// let urlcurrentMatches="https://api.cricapi.com/v1/currentMatches?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
+    let liveContainer=document.getElementById("left");
 
-// let urlSquad="https://api.cricapi.com/v1/players?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
+    let AppendLive=(data)=>{
 
-// let urlAllPlayer="https://api.cricapi.com/v1/players?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0";
+        liveContainer.innerHTML=null;
 
-// let urlBbyB="https://api.cricapi.com/v1/match_info?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0&id=820cfd88-3b56-4a6e-9dd8-1203051140da"
-   
-// let urlPlayerInfo="https://api.cricapi.com/v1/players_info?apikey=883128b6-33a4-46dc-96ae-f713d0af5c09&offset=0&id=16592242-ef26-45d9-bf23-fc090e90fbbe";
+        data.forEach((el)=>{
+
+            let div=document.createElement("div");
+            div.className="scorecard";
+
+            let aImg=document.createElement("img");
+            aImg.src=el.event_away_team_logo;
+
+            let aTeam=document.createElement("h4");
+            aTeam.innerText=el.event_away_final_result;
+
+            let hImg=document.createElement("img");
+            hImg.src=el.event_home_team_logo;
+
+            let hTeam=document.createElement("h4");
+            hTeam.innerText=el.event_home_final_result;
+
+            let info=document.createElement("h3");
+            info.innerText=el.event_status_info;
+
+            div.append(aImg,aTeam,hImg,hTeam,info);
+            liveContainer.append(div);   
+        });
+    }
+
+  
+
+    let wicketTakers=[
+        {
+            img:"https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/309000/309097.jpg",
+            name:"Arshdeep Singh",
+            wickets:3,
+            innings:1,
+            average:10.66,
+        },
+        {
+            img:"https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/303200/303282.jpg",
+            name:"Deepak Chahar",
+            wickets:2,
+            innings:1,
+            average:12.00,
+        },
+        {
+            img:"https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/303000/303000.jpg",
+            name:"Harshal Patel",
+            wickets:2,
+            innings:1,
+            average:13.00,
+        }
+
+    ];
+
+    let runScorers=[
+        {
+            img:"https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/304200/304207.png",
+            name:"KL Rahul",
+            runs:51,
+            innings:1,
+            average:"-",
+        },
+        {
+            img:"https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/329300/329343.4.jpg",
+            name:"Suryakumar Yadav",
+            runs:50,
+            innings:1,
+            average:"-",
+        },
+        {
+            img:"https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/317900/317953.jpg",
+            name:"Keshav Maharaj",
+            runs:41,
+            innings:1,
+            average:41
+        }
+    ];
+
+
+    let rigthUp=document.getElementById("rightUp");
+
+    let rightDown=document.getElementById("rightDown");
+
+    let appendRight=()=>{
+
+        rigthUp.innerHTML=null;
+        rightDown.innerHTML=null;
+
+        wicketTakers.forEach(({img,name,wickets,innings,average})=>{
+  
+    
+            let div=document.createElement("div");
+            div.className="rightDiv";
+
+            let i=document.createElement("img");
+            i.className="rightimg";
+            i.src=img;
+
+            let div2=document.createElement("div");
+
+            let n=document.createElement("h3");
+            n.innerText=name;
+
+            let w=document.createElement("h4");
+            w.innerText="Wickets:"+wickets;
+
+            let inn=document.createElement("h4");
+            inn.innerText="Innings:"+innings;
+
+            let av=document.createElement("h4");
+            av.innerText="Average:"+average;
+
+            div2.append(n,w,inn,av)
+            div.append(i,div2);
+            rigthUp.append(div);
+
+        });
+
+        let h2u=document.createElement("button");
+        h2u.className="view";
+        h2u.innerText="View All Stats";
+        rigthUp.append(h2u);
+
+        runScorers.forEach(({img,name,runs,innings,average})=>{
+
+            let div=document.createElement("div");
+            div.className="rightDiv";
+
+            let i=document.createElement("img");
+            i.className="rightimg";
+            i.src=img;
+
+            let div2=document.createElement("div");
+
+            let n=document.createElement("h3");
+            n.innerText=name;
+
+            let r=document.createElement("h4");
+            r.innerText="Runs:"+runs;
+
+            let inn=document.createElement("h4");
+            inn.innerText="Innings:"+innings;
+
+            let ac=document.createElement("h4");
+            ac.innerText="Average:"+average;
+
+            div2.append(n,r,inn,ac);
+
+            div.append(i,div2);
+            rightDown.append(div);
+
+        });
+
+        let h2d=document.createElement("button");
+        h2d.className="view";
+        h2d.innerText="View All Stats";
+        rightDown.append(h2d);
+    }
+
+    appendRight();
+
+
+
+
 </script>
