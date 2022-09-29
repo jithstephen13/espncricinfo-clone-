@@ -3,7 +3,7 @@ body{
 }
 #container{
     width: 80%;
-    height: 800px;
+    
     display: flex;
     gap: 10px;
     margin: auto;

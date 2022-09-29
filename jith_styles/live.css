@@ -1,0 +1,55 @@
+
+#container1{
+    width: 80%;
+     margin: auto;
+     display: flex;
+     justify-content: space-between;
+     
+
+}
+
+#main1_container1{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+#right_sidebar{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+#right_in1{
+    width: 95%;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-size: 13px;
+    padding-left: 5px;
+    
+    
+}
+#live_div>div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+img{
+    width: 10%;
+}
+#div_button{
+    display: flex;
+    justify-content: space-evenly;
+}
+#div_button>button{
+    width: 25%;
+    background: transparent;
+}
+#Result_div{
+  display: none;
+}
+#fixtr_div{
+  display: none;
+}
+#live_div{
+display: block;
+}
