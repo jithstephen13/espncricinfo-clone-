@@ -40,7 +40,7 @@ const url="https://newsapi.org/v2/everything?q=cricket&sortBy=popularity&apiKey=
 
     
     let getdata2=async()=>{
-        let res= await fetch(`${url}${key}&pageSize=8`)
+        let res= await fetch(`${url}${key}&pageSize=15`)
 
         res=await res.json()
         apppenside_bar2(res.articles )
@@ -249,7 +249,7 @@ getlivsr()
 
 let appendlivescoer=(data)=>{
 
-    let container=document.getElementById('Main_container1')
+    let container=document.getElementById('Main_container3')
     let div=document.createElement('div')
     div.setAttribute("class","div10")
     div.innerHTML=""

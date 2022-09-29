@@ -1,0 +1,25 @@
+#footer{
+    width: 100%;
+    padding: 20px;
+
+
+}
+#footer_container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+#footer_container>div{
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   margin-bottom: 20px;
+}
+#footer_container hr{
+    border: 1px solid rgb(197, 192, 192);
+    width: 100%;
+    margin: 0px;
+}
