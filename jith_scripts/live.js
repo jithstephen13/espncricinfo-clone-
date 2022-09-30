@@ -229,7 +229,7 @@ let appendlivescoer12=(data)=>{
         lname.innerText=league_name
         
         let st=document.createElement('p')
-        st.innerText=event_stadium
+        st.innerText=""
 
         lege_div.append(lname,st)
 
