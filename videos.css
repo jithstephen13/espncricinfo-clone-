@@ -15,3 +15,116 @@ h2{
     color: #48494A;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+#a2{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+#a2>div>iframe{
+    width: 100%;
+    height: 99%;
+    border-radius: 10px;
+}
+#a11>iframe{
+    border-radius: 10px;
+}
+#a3{
+    display: flex;
+    gap: 10px;
+}
+#a3>div{
+    width: 15%;
+    background-color:#D6DCEC;
+    border-radius: 10px;
+}
+#a3>div+div{
+    background-color:#152251;
+    border-radius: 10px;
+}
+#a3>div+div+div{
+    background-color:#802E33;
+    border-radius: 10px;
+}
+#a3>div+div+div+div{
+    background-color:#794E59;
+    border-radius: 10px;
+}
+#a3>div+div+div+div+div{
+    background-color:#2571CF;
+    border-radius: 10px;
+}
+#a3>div+div+div+div+div+div{
+    background-color:#017385;
+    border-radius: 10px;
+}
+#a3>div+div+div+div+div+div+div{
+    background-color:#8C97B5;
+    border-radius: 10px;
+}
+#a3>div>img{
+    width: 100%;
+    margin: auto;
+    padding-top: 20%;
+    
+}
+#a5{
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+}
+#a5>#a51{
+    width: 28%;
+    height: auto;
+   
+}
+#a51>div{
+    height: 350px;
+    width: 300px;
+    
+    margin-top: 10px;
+}
+#a51>div>img{
+    width: 60%;
+    height: 60%;
+   margin: 20%;
+}
+#a51>div{
+    background-color:#325884;
+    border-radius: 10px;
+}
+#a51>div+div{
+    background-color: #542E88;
+}
+#a51>div+div+div{
+    background-color:#FFCB3D;
+}
+#a51>div+div+div+div{
+    background-color:#02879C;
+}
+#a5>#a52{
+    width: 70%;
+    height:auto;
+    
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+#a52>div{
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+}
+#a52>div>iframe{
+    width: 100%;
+    height: 70%;
+    border-radius: 10px;
+}
+p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    text-align: center;
+}
+#a111{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    text-align: left;
+}
