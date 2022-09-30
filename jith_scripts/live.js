@@ -1,8 +1,12 @@
 
+// news api key 
+let key="448bb457b22b421b9064cdf0689e842c"
+// 448bb457b22b421b9064cdf0689e842c  43952ba56a2e4570b47285bb77628cb6
+//80732b8fea5a4855a6728ee0eee12001
 
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var mm = String(today.getMonth() + 1).padStart(2, '0');
 var yyyy = today.getFullYear();
 
 today =yyyy+'-'+mm+'-'+(+dd) ;
@@ -28,9 +32,7 @@ let getlive_data=async()=>{
 }
 getlive_data()
 
-let key="43952ba56a2e4570b47285bb77628cb6"
-// 448bb457b22b421b9064cdf0689e842c
-//80732b8fea5a4855a6728ee0eee12001
+
 
 const url="https://newsapi.org/v2/everything?q=cricket&sortBy=popularity&apiKey="
     let getdata2=async()=>{
@@ -40,7 +42,7 @@ const url="https://newsapi.org/v2/everything?q=cricket&sortBy=popularity&apiKey=
         apppenside_bar2(res.articles )
 
     }
-    
+
     getdata2()
 
 
