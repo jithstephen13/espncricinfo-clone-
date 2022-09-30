@@ -236,5 +236,45 @@ img:hover{
     border-radius: 10px;
  
 }
+#uper_nav{
+    margin: 0;
+    width: 100%;
+    height: 230px;
+    background-color: #0398dc;
 
+}
+#upnav_contnt{
+    max-width: 75%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.Navbox1{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border-radius: 15px;
+    margin-top: 20px;
+    min-width: 250px;
+    text-align: center;
+}
+.Navbox2{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+.Nav_homdiv{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.Nav_awaydiv{
+    display: flex;
+    justify-content: space-evenly;
+
+}
 
