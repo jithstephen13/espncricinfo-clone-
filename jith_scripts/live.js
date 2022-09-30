@@ -40,6 +40,7 @@ const url="https://newsapi.org/v2/everything?q=cricket&sortBy=popularity&apiKey=
         apppenside_bar2(res.articles )
 
     }
+    
     getdata2()
 
 

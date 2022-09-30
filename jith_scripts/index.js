@@ -89,8 +89,7 @@ const url="https://newsapi.org/v2/everything?q=cricket&sortBy=popularity&apiKey=
         h1.innerText=data[0].title
         N1.append(im1,h1)
         
-
-
+        
         let N2=document.createElement('div')
         N2.setAttribute('id','N2')
         let N2_1=document.createElement('div')
