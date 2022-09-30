@@ -1,6 +1,6 @@
 //  535406d3232541aebbaa0608736333dd
-let key="43952ba56a2e4570b47285bb77628cb6"
-// 448bb457b22b421b9064cdf0689e842c
+//let key="43952ba56a2e4570b47285bb77628cb6"
+let key="448bb457b22b421b9064cdf0689e842c"
 //80732b8fea5a4855a6728ee0eee12001
 
 const url="https://newsapi.org/v2/everything?q=cricket&sortBy=popularity&apiKey="
@@ -89,7 +89,7 @@ const url="https://newsapi.org/v2/everything?q=cricket&sortBy=popularity&apiKey=
         h1.innerText=data[0].title
         N1.append(im1,h1)
         
-        
+
         let N2=document.createElement('div')
         N2.setAttribute('id','N2')
         let N2_1=document.createElement('div')
@@ -127,12 +127,17 @@ const url="https://newsapi.org/v2/everything?q=cricket&sortBy=popularity&apiKey=
 
 
     }
+      //let API_key='AIzaSyBdCatVit3HGi73SsyJLiX14t7v7orur1A'AIzaSyBOEF0LDn-V7Drakrg_WCuci1_id2m067k 'AIzaSyCdGMs-Eh9PcnRJe0LRR7MuENln8qQVvVQ'
+      let API_key='AIzaSyDtZxUPdyi0i6-C5oIe1kkv5owX6ihbqog'
 
     let getvdo=async()=>{
 
    
     //let API_key='AIzaSyBdCatVit3HGi73SsyJLiX14t7v7orur1A'AIzaSyBOEF0LDn-V7Drakrg_WCuci1_id2m067k
-    let API_key='AIzaSyCtzHGe1Xc6YVtsvMQL0ta3jeuFE7cVVvg'
+   // let API_key='AIzaSyCtzHGe1Xc6YVtsvMQL0ta3jeuFE7cVVvg'
+
+  
+
 
     let res= await fetch(`https://www.googleapis.com/youtube/v3/search?q=icc cricket&key=${API_key}&part=snippet&maxResults=20&chart=mostPopular&regionCode=IN`)
              let {items}=await res.json()
@@ -186,6 +191,10 @@ let getvdo2=async()=>{
    
   //  let API_key='AIzaSyBdCatVit3HGi73SsyJLiX14t7v7orur1A''AIzaSyBOEF0LDn-V7Drakrg_WCuci1_id2m067k'
   let API_key='AIzaSyCtzHGe1Xc6YVtsvMQL0ta3jeuFE7cVVvg'
+
+//   //  let API_key='AIzaSyBdCatVit3HGi73SsyJLiX14t7v7orur1A''AIzaSyBOEF0LDn-V7Drakrg_WCuci1_id2m067k'
+//   let API_key='AIzaSyDtZxUPdyi0i6-C5oIe1kkv5owX6ihbqog'
+
     
 let res= await fetch(`https://www.googleapis.com/youtube/v3/search?q=icc cricket&key=${API_key}&part=snippet&maxResults=20&chart=mostPopular&regionCode=IN`)
              let {items}=await res.json()
