@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./component/navbar.css">
     <style>
       body{
         background-color: azure;
@@ -20,11 +21,11 @@
       #box2 {
         text-align: center;
       }
-      #box2sub {
+      .box2sub {
         text-align: center;
         color: rgb(66, 180, 224);
       }
-      #box2sub :hover {
+      .box2sub :hover {
         color: rgb(2, 126, 175);
         cursor: pointer;
       }
@@ -60,6 +61,7 @@
     </style>
   </head>
   <body>
+    <div id="navcont"></div>
     <div id="godcontainer">
       <div>
         <div id="up2">
@@ -71,7 +73,7 @@
         <div id="box2">
           <h2>INTERNATIONAL TOURS</h2>
 
-          <div id="box2sub">
+          <div class="box2sub">
             <a class="disp" href="display.html"><h3>India tour of New Zealand, Nov 2022</h3></a>
             <a class="disp" href="display.html"><h3>England tour of Pakistan, Dec 2022</h3></a>
             <a class="disp" href="display.html"><h3>South Africa tour of Australia, Dec 2022</h3></a>
@@ -88,7 +90,7 @@
 
           <h2>INTERNATIONAL TOURNAMENTS</h2>
 
-          <div id="box2sub">
+          <div class="box2sub">
             <a class="disp" href="display.html"><h3>Women's U19 World Cup</h3></a>
             
           </div>
@@ -108,7 +110,10 @@
     </div>
   </body>
 </html>
-<script>
+<script type="module">
+    import {navbar} from "./component/main.js"
+document.getElementById("navcont").innerHTML=navbar()
+
     let url2="https://newsapi.org/v2/everything?q=cricket&apiKey=abffd40055ea43ec8374895bd5001fec";
   
   let getTweets=async()=>{

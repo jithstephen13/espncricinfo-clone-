@@ -1,3 +1,8 @@
+import {navbar} from "./component/main.js"
+document.getElementById("navcont").innerHTML=navbar()
+
+
+
 //  535406d3232541aebbaa0608736333dd
 //let key="43952ba56a2e4570b47285bb77628cb6"
 let key="448bb457b22b421b9064cdf0689e842c"

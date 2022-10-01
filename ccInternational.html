@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <link rel="stylesheet" href="./component/navbar.css">
     <style>
         body{
             background-color: azure;
@@ -121,7 +123,7 @@
     </style>
 </head>
 <body>
-    
+    <div id="navcont"></div>
     <div id="godcontainer">
     
         <div>
@@ -160,7 +162,7 @@
                     <a class="disp" href="display.html"> <h3 >T20 WC Qualifier(W)</h3></a>
                     <a class="disp" href="display.html"> <h3 >Women's Asia Cup</h3></a>
                     <a class="disp" href="display.html"><h3 >T20 World Cup Warm-up</h3></a>
-                    <a class="disp" href="display.html">ICC Men's T20 World Cup</h3></a>
+                    <a class="disp" href="display.html"><h3>ICC Men's T20 World Cup</h3></a>
                 
                 </div>
     
@@ -356,8 +358,9 @@
     </div>
 </body>
 </html>
-<script>
-
+<script type="module">
+import {navbar} from "./component/main.js"
+document.getElementById("navcont").innerHTML=navbar()
 
 //  22PN6bFkNY0UJfz8Q0uNvp0W6WO6u3sIBtnRaGVcBVw56zPkhTU4UNRASdq5
 

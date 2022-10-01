@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./component/navbar.css">
     <style>
       body {
         background-color: azure;
@@ -62,6 +63,8 @@
     </style>
   </head>
   <body>
+     <div id="navcont"></div>
+
     <div id="godcontainer">
       <div>
         <div id="up3">
@@ -122,7 +125,9 @@
     </div>
   </body>
 </html>
-<script>
+<script type="module">
+  import {navbar} from "./component/main.js"
+document.getElementById("navcont").innerHTML=navbar()
     let url2="https://newsapi.org/v2/everything?q=cricket&apiKey=abffd40055ea43ec8374895bd5001fec";
   
   let getTweets=async()=>{

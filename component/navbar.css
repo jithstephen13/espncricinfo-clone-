@@ -1,0 +1,94 @@
+#navbar{
+    height: 60px;
+    width: 100%;
+    background-color:#0398dc;
+    color: white;
+    
+
+    
+}
+
+#navbar>#logo{
+    height: 30px;
+    width: 12%;
+    margin-top: 10px;
+    margin-left: 5%;
+}
+
+.dropdown {
+position: relative;
+display: inline-block; 
+}
+
+.dropbtn {
+/* background-color: #4CAF50; */
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+background: none;
+/* padding: 10px; */
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9 ; 
+min-width: 350px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1; 
+transition: all 0.3s ease-in;
+
+}
+
+
+.dropdown-content a {
+color: black;
+padding: 5px 0;
+text-decoration: none;
+display: block;
+font-size: 20px;
+gap: 10px;
+}
+
+.dropbtn span{
+/* font-size: 20px; */
+display: inline-block;
+/* margin: 100px 0 0 0; */
+}
+
+.dropdown button > h4{
+display: inline-block;
+font-weight: 300;
+}
+
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+display: block;
+
+}
+
+.dropdown:hover .dropbtn {
+background-color: #15518a;
+}
+
+#flogo{
+height: 40px;
+}
+
+#fantasy{
+margin-left: 70%;
+margin-top: -3.5%;
+}
+
+#fan{
+color: white;
+}
+
+#edi{
+margin-left: 77%;
+margin-top: -40%;
+}

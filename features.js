@@ -1,3 +1,6 @@
+import {navbar} from "./component/main.js"
+document.getElementById("navcont").innerHTML=navbar()
+
 let page=1
 let res;
 let getData=async()=>{
