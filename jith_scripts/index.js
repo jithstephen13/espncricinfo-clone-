@@ -138,7 +138,11 @@ const url="https://newsapi.org/v2/everything?q=cricket&sortBy=popularity&apiKey=
     let getvdo=async()=>{
 
    
+    //let API_key='AIzaSyBdCatVit3HGi73SsyJLiX14t7v7orur1A'AIzaSyBOEF0LDn-V7Drakrg_WCuci1_id2m067k
+   // let API_key='AIzaSyCtzHGe1Xc6YVtsvMQL0ta3jeuFE7cVVvg'
+
   
+
 
     let res= await fetch(`https://www.googleapis.com/youtube/v3/search?q=icc cricket&key=${API_key}&part=snippet&maxResults=20&chart=mostPopular&regionCode=IN`)
              let {items}=await res.json()
@@ -190,8 +194,12 @@ let appendfun=(data)=>{
 let getvdo2=async()=>{
 
    
+  //  let API_key='AIzaSyBdCatVit3HGi73SsyJLiX14t7v7orur1A''AIzaSyBOEF0LDn-V7Drakrg_WCuci1_id2m067k'
+  let API_key='AIzaSyCtzHGe1Xc6YVtsvMQL0ta3jeuFE7cVVvg'
+
 //   //  let API_key='AIzaSyBdCatVit3HGi73SsyJLiX14t7v7orur1A''AIzaSyBOEF0LDn-V7Drakrg_WCuci1_id2m067k'
 //   let API_key='AIzaSyDtZxUPdyi0i6-C5oIe1kkv5owX6ihbqog'
+
     
 let res= await fetch(`https://www.googleapis.com/youtube/v3/search?q=icc cricket&key=${API_key}&part=snippet&maxResults=20&chart=mostPopular&regionCode=IN`)
              let {items}=await res.json()
@@ -246,6 +254,7 @@ let getlivsr=async()=>{
  res=await res.json()
  console.log(res)
  appendlivescoer(res.result)
+ appendliv_navbar(res.result)
 
 }
 // event_away_team_logo    event_away_team   
@@ -356,6 +365,56 @@ let apppenside_bar5=(data)=>{
  
 }
 
+let appendliv_navbar=(data)=>{
+    let container=document.getElementById('upnav_contnt')
+    container.innerHTML=""
+    let i=0
+    data.forEach(({event_away_final_result,
+        event_away_team,
+        event_away_team_logo,
+        event_home_final_result,
+        event_home_team,
+        league_name,
+        event_stadium,
+        event_home_team_logo}) => {
+           if(i<4){
+            let box=document.createElement('div')
+            box.setAttribute("class","Navbox1")
+
+            let ti=document.createElement('p')
+            ti.innerText=league_name
+
+            let box2=document.createElement('div')
+            box2.setAttribute("class","Navbox2")
+
+            let box3=document.createElement('div')
+            box3.setAttribute("class","Nav_homdiv")
+
+            let t1_name=document.createElement('p')
+            t1_name.innerText=event_home_team
+            let t1_scor=document.createElement('p')
+            t1_scor.innerText=event_home_final_result
+
+            box3.append(t1_name,t1_scor)
+
+            let box4=document.createElement('div')
+            box4.setAttribute("class","Nav_awaydiv")
+
+            let t2_name=document.createElement('p')
+            t2_name.innerText=event_away_team
+            let t2_scor=document.createElement('p')
+            t2_scor.innerText=event_away_final_result
+
+            box4.append(t2_name,t2_scor)
+
+            box2.append(box3,box4)
+            let hr=document.createElement('hr')
+            box.append(ti,box2,hr)
+            container.append(box)
+           }
+        i++
+    });
+}
  
 
 
