@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./jith_styles/style.css">
      <link rel="stylesheet" href="./jith_styles/live.css">
+<link rel="stylesheet" href="./component/navbar.css">
+
     <title>Document</title>
 
 </head>
 <body>
-    <div id="navbar  "></div>
+    <div id="navcont"></div>
     <div id="container1">
         <div id="main1_container">
             <div id="div_button">
+                 <button id="Result">Result</button>
                   <button id="Live">Live</button>
                   <button id="Upcomming">Upcomming</button>
-                  <button id="Result">Result</button>
+                  
             </div>
             <div id="live_div">
 
@@ -42,4 +45,8 @@
     
 </body>
 </html>
+<script type="module">
+    import {navbar} from "./component/main.js"
+document.getElementById("navcont").innerHTML=navbar()
+</script>
 <script src="./jith_scripts/live.js"></script>

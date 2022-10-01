@@ -11,7 +11,7 @@ var yyyy = today.getFullYear();
 
 today =yyyy+'-'+mm+'-'+(+dd) ;
 
-let next=yyyy+'-'+mm+'-'+(+dd+10)
+let next=yyyy+'-'+mm+'-'+(+dd)
 
 
 console.log(today);
@@ -75,12 +75,12 @@ let appendlivescoer=(data)=>{
     let i=0
     data.forEach(({event_away_final_result,
         event_away_team,
-        event_away_team_logo,
+        // event_away_team_logo,
         event_home_final_result,
         event_home_team,
         league_name,
         event_stadium,
-        event_home_team_logo
+        // event_home_team_logo
         }) => {
     
         let div1=document.createElement('div')
@@ -103,26 +103,26 @@ let appendlivescoer=(data)=>{
         team_div.setAttribute('id','tem_div')
 
         let home_div=document.createElement('div')
-        let h_log=document.createElement('img')
-        h_log.src=event_home_team_logo
+        // let h_log=document.createElement('img')
+        // h_log.src=event_home_team_logo
         let h_name=document.createElement('p')
         h_name.innerText=event_home_team
         let h_score=document.createElement('p')
         h_score.innerText=event_home_final_result
-        home_div.append(h_log,h_name,h_score)
+        home_div.append(h_name,h_score)
 
 
 
 
         let away_div=document.createElement('div')
-        let a_log=document.createElement('img')
-        a_log.src=event_away_team_logo
+        // let a_log=document.createElement('img')
+        // a_log.src=event_away_team_logo
         let a_name=document.createElement('p')
         a_name.innerText=event_away_team
         let a_score=document.createElement('p')
         a_score.innerText=event_away_final_result
 
-        away_div.append(a_log,a_name,a_score)
+        away_div.append(a_name,a_score)
 
         team_div.append(home_div,away_div)
         

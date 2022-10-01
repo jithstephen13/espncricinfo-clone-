@@ -38,6 +38,7 @@ img{
 }
 #div_button{
     display: flex;
+    width: 700px;
     justify-content: space-evenly;
 }
 #div_button>button{
@@ -45,11 +46,11 @@ img{
     background: transparent;
 }
 #Result_div{
-  display: none;
+  display: block;
 }
 #fixtr_div{
   display: none;
 }
 #live_div{
-display: block;
+display: none;
 }

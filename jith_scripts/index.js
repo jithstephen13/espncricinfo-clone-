@@ -1,5 +1,5 @@
-import {navbar} from "./component/main.js"
-document.getElementById("navcont").innerHTML=navbar()
+// import {navbar} from "./component/main.js"
+// document.getElementById("navcont").innerHTML=navbar()
 
 
 
