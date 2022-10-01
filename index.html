@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./jith_styles/style.css">
     <link rel="stylesheet" href="./jith_styles/fotter.css">
+    <link rel="stylesheet" href="./component/navbar.css">
    
       
           <title>Document</title>
 </head>
 <body>
-    <div id="navbar">
+    <div id="navcont">
 
         <!-- navbar -->
 
@@ -174,4 +175,8 @@
     
 </body>
 </html>
-<script src="./jith_scripts/index.js"></script>
+<script type="module">
+     import {navbar} from "./component/main.js"
+document.getElementById("navcont").innerHTML=navbar()
+</script>
+<script src="./jith_scripts/index.js" ></script>

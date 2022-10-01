@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="videos.css">
+    <link rel="stylesheet" href="./component/navbar.css">
+
 </head>
 
 <body>
+    <div id="navcont"></div>
     <div id="a1">
         <div>
             <h2>Fantasy Pick: Lead with Markram and Suryakumar , top strikers of t-20 format </h2>
@@ -84,3 +87,7 @@
 </body>
 
 </html>
+<script type="module">
+    import {navbar} from "./component/main.js"
+document.getElementById("navcont").innerHTML=navbar()
+</script>
