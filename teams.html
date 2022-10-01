@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./component/navbar.css">
+    
+    <style>
+        
+         #ad{
+            width: 80%;
+            height: 300px;
+            border:0px solid blue;
+            margin: auto;
+        }
+        .adimage{
+        
+        width:100%;
+    }
+
+    #International{
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        border:1px solid rgb(172, 163, 163);
+    }
+
+    
+    #Women{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        border:1px solid rgb(172, 163, 163);
+    }
+    
+    #IPL{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        border:1px solid rgb(172, 163, 163);
+    }
+    .teams{
+      display:flex;
+      justify-content: space-evenly;
+      border:1px solid rgb(172, 163, 163);
+    }
+    .teams :hover{
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div id="navcont"></div>
+    <div id="ad">
+
+
+    </div>
+
+    <div id="teamscontainer">
+
+        <h2>POPULAR INTERNATIONAL TEAMS</h2>
+        <div id="International">
+
+        </div>
+
+        <h2>POPULAR WOMEN'S TEAMS</h2>
+        <div id= "Women">
+
+        </div>
+
+        <h2>IPL 2022 TEAMS</h2>
+        <div id="IPL">
+
+        </div>
+
+    </div>
+</body>
+</html>
+<script type="module">
+      import {navbar} from "./component/main.js"
+document.getElementById("navcont").innerHTML=navbar()
+</script>
+<script>
+
+let adData=[
+        {
+          url:"https://i.ibb.co/WWgykhb/ad1.jpg",
+        },
+        {
+            url:"https://i.ibb.co/qBQMrWh/ad2.jpg",
+        },
+        {
+           url:"https://i.ibb.co/f99983L/ad3.jpg",
+        },
+        {
+          url:"https://i.ibb.co/BVNwr2B/ad4.jpg",
+        }
+    ]
+
+    let id;
+    let i=0;
+    let adContainer=document.getElementById("ad");
+    id=setInterval(() => {
+
+        if(i==3){
+            i=0;
+        }
+      
+        appendAd(i);
+
+        i++;
+        
+    }, 5000);
+
+    let appendAd=(i)=>{
+
+        adContainer.innerHTML=null;
+
+        let img=document.createElement("img");
+        img.className="adimage";
+            img.src=adData[i].url;
+
+        adContainer.append(img); 
+    }
+
+// c0f5fc35d5a8ea2808d5e31d9f6daa8cb0e45a7f9fae22882085e86a5c9cc9aa  cricAPI key
+
+
+let menTeams=[
+    {
+      img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/321000/321005.png",
+      name:"Afghanistan"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340400/340493.png",
+        name:"Australia"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/341400/341456.png",
+        name:"Bangladesh"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313114.logo.png",
+        name:"England"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313128.logo.png",
+        name:"India"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313149.logo.png",
+        name:"Ireland"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340500/340505.png",
+        name:"New Zealand"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313129.logo.png",
+        name:"Pakistan"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313150.logo.png",
+        name:"Scotland"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313125.logo.png",
+        name:"South Africa"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340000/340047.png",
+        name:"Sri Lanka"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313147.logo.png",
+        name:"United Arab Emirates"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/317600/317615.png",
+        name:"West Indies"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340500/340503.png",
+        name:"Zimbabwe"
+    }
+]
+
+let womenTeams=[
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313200/313225.logo.png",
+        name:"Australia Women"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/341400/341456.png",
+        name:"Bangladesh Women"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313200/313261.logo.png",
+        name:"England Women"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313300/313309.logo.png",
+        name:"India Women"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340500/340505.png",
+        name:"New Zealand Women"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313300/313341.logo.png",
+        name:"Pakistan Women"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313300/313348.logo.png",
+        name:"South Africa Women"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340000/340047.png",
+        name:"Sri Lanka Women"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313400/313402.logo.png",
+        name:"Thailand Women"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/317600/317615.png",
+        name:"West Indies Women"
+    }
+]
+
+let IPLteams=[
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313400/313421.logo.png",
+        name:"Chennai Super Kings"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313400/313422.logo.png",
+        name:"Delhi Capitals"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/334700/334707.png",
+        name:"Gujarat Titans"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313400/313419.logo.png",
+        name:"Kolkata Knight Riders"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/333800/333885.png",
+        name:"Lucknow Super Giants"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/344000/344062.png",
+        name:"Mumbai Indians"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/317000/317003.png",
+        name:"Punjab Kings"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313400/313423.logo.png",
+        name:"Rajasthan Royals"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313400/313418.logo.png",
+        name:"Royal Challengers Bangalore"
+    },
+    {
+        img:"https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313400/313480.logo.png",
+        name:"Sunrisers Hyderabad"
+    }
+]
+
+let int_container=document.getElementById("International");
+let wom_container=document.getElementById("Women");
+let ipl_container=document.getElementById("IPL");
+
+let AppendTeams=()=>{
+
+   int_container.innerHTML=null;
+   wom_container.innerHTML=null;
+   ipl_container.innerHTML=null;
+
+   menTeams.forEach(({img,name})=>{
+
+    let div=document.createElement("div");
+    div.className="teams";
+      
+    let image=document.createElement("img");
+    image.src=img;
+
+    let n=document.createElement("h3");
+    n.innerText=name;
+
+    div.append(image,n);
+    div.onclick=()=>{
+        window.location.href="display.html";
+    }
+    int_container.append(div);
+   });
+
+   womenTeams.forEach(({img,name})=>{
+
+    let div=document.createElement("div");
+    div.className="teams";
+      
+    let image=document.createElement("img");
+    image.src=img;
+
+    let n=document.createElement("h3");
+    n.innerText=name;
+
+    div.append(image,n);
+    div.onclick=()=>{
+        window.location.href="display.html";
+    }
+    wom_container.append(div);
+
+   });
+
+   IPLteams.forEach(({img,name})=>{
+
+    let div=document.createElement("div");
+    div.className="teams";
+      
+    let image=document.createElement("img");
+    image.src=img;
+
+    let n=document.createElement("h3");
+    n.innerText=name;
+
+    div.append(image,n);
+    div.onclick=()=>{
+        window.location.href="display.html";
+    }
+    ipl_container.append(div);
+
+    
+   })
+
+
+}
+
+AppendTeams();
+</script>
